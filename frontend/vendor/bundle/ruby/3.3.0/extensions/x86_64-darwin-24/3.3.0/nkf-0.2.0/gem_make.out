@@ -1,0 +1,18 @@
+current directory: /Users/moeedsarwar/Projects/ReactNative/FullStack/frontend/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+/Users/moeedsarwar/.rbenv/versions/3.3.8/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/moeedsarwar/Projects/ReactNative/FullStack/frontend/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250818-99811-5kiqiv sitelibdir\=./.gem.20250818-99811-5kiqiv clean
+
+current directory: /Users/moeedsarwar/Projects/ReactNative/FullStack/frontend/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250818-99811-5kiqiv sitelibdir\=./.gem.20250818-99811-5kiqiv
+compiling nkf.c
+linking shared-object nkf.bundle
+
+current directory: /Users/moeedsarwar/Projects/ReactNative/FullStack/frontend/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250818-99811-5kiqiv sitelibdir\=./.gem.20250818-99811-5kiqiv install
+/usr/bin/install -c -m 0755 nkf.bundle ./.gem.20250818-99811-5kiqiv
+
+current directory: /Users/moeedsarwar/Projects/ReactNative/FullStack/frontend/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250818-99811-5kiqiv sitelibdir\=./.gem.20250818-99811-5kiqiv clean
