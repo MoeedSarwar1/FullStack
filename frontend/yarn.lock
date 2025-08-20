@@ -1537,7 +1537,7 @@
     "@babel/traverse" "^7.25.3"
     "@react-native/codegen" "0.81.0"
 
-"@react-native/babel-preset@0.81.0":
+"@react-native/babel-preset@0.81.0", "@react-native/babel-preset@^0.81.0":
   version "0.81.0"
   resolved "https://registry.yarnpkg.com/@react-native/babel-preset/-/babel-preset-0.81.0.tgz#ee319c264b0e4f9726510a02e1cece1952958e0e"
   integrity sha512-RKMgCUGsso/2b32kgg24lB68LJ6qr2geLoSQTbisY6Usye0uXeXCgbZZDbILIX9upL4uzU4staMldRZ0v08F1g==
