@@ -6,13 +6,40 @@ import RegisterationStyles from './styles';
 const Registeration = () => {
   const navigation = useNavigation();
   const styles = RegisterationStyles();
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  const handleRegister = () => {
+    // TODO: Add registration logic here
+    console.log('Register:', { name, email, password });
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Register</Text>
-      <TextInput style={styles.input} placeholder="Name" />
-      <TextInput style={styles.input} placeholder="Email" />
-      <TextInput style={styles.input} placeholder="Password" secureTextEntry />
-      <Button title="Register" onPress={() => {}} />
+      <TextInput
+        style={styles.input}
+        placeholder="Name"
+        value={name}
+        onChangeText={setName}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Email"
+        value={email}
+        onChangeText={setEmail}
+        autoCapitalize="none"
+        keyboardType="email-address"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+      />
+      <Button title="Register" onPress={handleRegister} />
       <Button
         title="Back to Login"
         onPress={() => navigation.navigate('Login')}
