@@ -1,8 +1,11 @@
 // index.js
 const express = require("express");
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const cors = require("cors");
+const User = require("./models/userSchema");
+const signup = require("./controllers/signup");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT;
@@ -22,10 +25,8 @@ mongoose
 app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Enable parsing JSON request bodies
 
-// Define your API routes
-app.get("/", (req, res) => {
-  res.send("Hello from the Express server!");
-});
+//register
+app.post("/api/register", signup);
 
 app.get("/api/data", (req, res) => {
   res.json({ message: "Hello From The Server Side Jaanu" });

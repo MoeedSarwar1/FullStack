@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Button, Text, TextInput, View } from 'react-native';
+import { registerUser } from '../../network/AuthApi';
 import RegisterationStyles from './styles';
 
 const Registeration = () => {
@@ -10,9 +11,14 @@ const Registeration = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const handleRegister = () => {
-    // TODO: Add registration logic here
-    console.log('Register:', { name, email, password });
+  const handleRegister = async () => {
+    try {
+      const data = await registerUser(name, email, password);
+      console.log(data);
+      alert(data.message);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
