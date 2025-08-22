@@ -17,3 +17,20 @@ export const registerUser = async (
     throw error;
   }
 };
+
+export const loginUser = async (email: string, password: string) => {
+  try {
+    // Normalize email before sending to backend
+    const normalizedEmail = email.trim().toLowerCase();
+    const res = await fetch(`${BACKEND_URL}/api/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: normalizedEmail, password }),
+    });
+    return await res.json();
+  } catch (error) {
+    throw error;
+  }
+};

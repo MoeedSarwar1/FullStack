@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const cors = require("cors");
 const User = require("./models/userSchema");
 const signup = require("./controllers/signup");
+const login = require("./controllers/login");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT;
@@ -28,8 +29,16 @@ app.use(express.json()); // Enable parsing JSON request bodies
 //register
 app.post("/api/register", signup);
 
-app.get("/api/data", (req, res) => {
-  res.json({ message: "Hello From The Server Side Jaanu" });
+//login
+app.post("/api/login", login);
+
+app.get("/api/users", async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch users" });
+  }
 });
 
 // Start the server

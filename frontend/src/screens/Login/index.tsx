@@ -1,6 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Button, Text, TextInput, View } from 'react-native';
+import { Alert, Button, Text, TextInput, View } from 'react-native';
+import { useAuth } from '../../context/AuthContext';
+import { loginUser } from '../../network/AuthApi';
 import LoginStyles from './styles';
 
 const Login = () => {
@@ -8,10 +10,21 @@ const Login = () => {
   const styles = LoginStyles();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const { login } = useAuth();
 
-  const handleLogin = () => {
-    // TODO: Add login logic here
-    console.log('Login:', { email, password });
+  const handleLogin = async () => {
+    try {
+      const data = await loginUser(email, password);
+      console.log(data);
+      if (data.token) {
+        login(data.user, data.token);
+      } else {
+        Alert.alert('Login Failed', data.message || 'Invalid credentials');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      Alert.alert('Login Error', (error as any).message || 'Unknown error');
+    }
   };
 
   return (
