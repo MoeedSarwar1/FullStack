@@ -28,7 +28,7 @@ const login = async (req, res) => {
       { email: user.email, id: user._id },
       process.env.JWT,
       {
-        expiresIn: "1h",
+        expiresIn: "300",
       }
     );
     res.json({ token, user: { name: user.name, email: user.email } });
